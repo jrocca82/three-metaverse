@@ -1,5 +1,4 @@
 import { config as dotenvConfig } from "dotenv";
-dotenvConfig();
 import "@nomiclabs/hardhat-waffle";
 import "@nomiclabs/hardhat-ethers";
 import "@openzeppelin/hardhat-upgrades";
@@ -13,6 +12,7 @@ import "@nomiclabs/hardhat-waffle";
 import { ethers } from "ethers";
 import "hardhat-gas-reporter";
 
+dotenvConfig();
 const defaultKey =
   "0000000000000000000000000000000000000000000000000000000000000001";
 const defaultRpcUrl = "https://localhost:8545";
@@ -29,7 +29,7 @@ export default {
     sources: "./contracts",
     cache: "./cache",
     artifacts: "./build",
-    tests: "./tests"
+    tests: "./test"
   },
   networks: {
     hardhat: {
@@ -50,8 +50,8 @@ export default {
       url: process.env.KOVAN_URL || defaultRpcUrl,
       accounts: [process.env.PRIVATE_KEY || defaultKey]
     },
-    rinkeby: {
-      url: process.env.RINKEBY_URL || defaultRpcUrl,
+    goerli: {
+      url: process.env.GOERLI_URL || defaultRpcUrl,
       accounts: [process.env.PRIVATE_KEY || defaultKey]
     },
     mainnet: {

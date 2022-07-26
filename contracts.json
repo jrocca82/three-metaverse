@@ -1,4 +1,9 @@
 {
-    "kovan": { },
-    "localhost": { } 
+  "kovan": {},
+  "localhost": {
+    "land": "0xF2E246BB76DF876Cef8b38ae84130F4F55De395b"
+  },
+  "goerli": {
+    "land": "0x78D670D17d7D588E88DF8fA108E9F5D44714667E"
   }
+}
